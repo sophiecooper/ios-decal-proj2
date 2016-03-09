@@ -9,6 +9,37 @@
 import UIKit
 
 class GameViewController: UIViewController {
+    
+    let hangmanIcons = ["hangman1.gif", "hangman2.gif", "hangman3.gif", "hangman4.gif", "hangman5.gif", "hangman6.gif", "hangman7.gif"]
+    var wrongGuesses = 0
+    
+    @IBOutlet var CorrectGuess: UIButton!
+    
+    @IBOutlet var IncorrectGuess: UIButton!
+    
+    @IBOutlet var HangmanIcon: UIImageView!
+    
+    @IBOutlet weak var GuessingTextField: UITextField!
+    
+    @IBOutlet weak var GuessingWord: UILabel!
+    
+    @IBOutlet weak var IncorrectLetters: UILabel!
+    
+    
+    
+    @IBAction func WrongGuess() {
+        wrongGuesses += 1
+        if wrongGuesses >= 7 {
+            GameOver()
+            return
+        }
+        print(wrongGuesses)
+        HangmanIcon.image = UIImage(named: hangmanIcons[wrongGuesses])
+    }
+
+    func GameOver() {
+        print("game over")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,12 +48,29 @@ class GameViewController: UIViewController {
         let hangmanPhrases = HangmanPhrases()
         var phrase = hangmanPhrases.getRandomPhrase()
         print(phrase)
+        var phraseLetters = ""
+        HangmanIcon.image = UIImage(named: hangmanIcons[wrongGuesses])
+        for character in phrase.characters {
+            if character == " " {
+                phraseLetters += String(character)
+            } else {
+                phraseLetters += "-"
+            }
+        }
+        GuessingWord.text = phraseLetters
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //override func loadView() {
+    //    IncorrectGuess.addTarget(self, action: "wrongGuess", forControlEvents: .TouchUpInside)
+    //}
+
     
 
     /*

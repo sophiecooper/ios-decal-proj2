@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A77D1AAE1B1FD6EF3647C9713545E002798BBF59",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A77D1AAE1B1FD6EF3647C9713545E002798BBF59" : 0,
+    "55CCDCB7A8583E671D8CF9FA82800CF6D50BD920" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "77368C63-F62F-429F-A93C-7C7E071C1B16",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A77D1AAE1B1FD6EF3647C9713545E002798BBF59" : "Hangman\/",
+    "55CCDCB7A8583E671D8CF9FA82800CF6D50BD920" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Hangman",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Hangman\/Hangman.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sophiecooper\/ios-decal-hw1.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "55CCDCB7A8583E671D8CF9FA82800CF6D50BD920"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sophiecooper\/ios-decal-proj2.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A77D1AAE1B1FD6EF3647C9713545E002798BBF59"
+    }
+  ]
+}
