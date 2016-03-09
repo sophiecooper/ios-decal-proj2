@@ -24,21 +24,17 @@ class GameViewController: UIViewController {
     @IBOutlet weak var GuessingWord: UILabel!
     
     @IBOutlet weak var IncorrectLetters: UILabel!
+
+    var Word : String = ""
     
-    
-    
-    @IBAction func WrongGuess() {
-        wrongGuesses += 1
-        if wrongGuesses >= 7 {
-            GameOver()
-            return
-        }
-        print(wrongGuesses)
-        HangmanIcon.image = UIImage(named: hangmanIcons[wrongGuesses])
-    }
+    var phraseLetters : String = ""
+
+
 
     func GameOver() {
         print("game over")
+//        let AlertController = UIAlertController(title: "Game Over", message: "Sorry, you are out of lives. Game over.", preferredStyle: .Alert)
+//        AlertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: ))
     }
 
     override func viewDidLoad() {
@@ -47,14 +43,14 @@ class GameViewController: UIViewController {
         // Do any additional setup after loading the view.
         let hangmanPhrases = HangmanPhrases()
         var phrase = hangmanPhrases.getRandomPhrase()
+        Word = phrase
         print(phrase)
-        var phraseLetters = ""
         HangmanIcon.image = UIImage(named: hangmanIcons[wrongGuesses])
         for character in phrase.characters {
             if character == " " {
                 phraseLetters += String(character)
             } else {
-                phraseLetters += "-"
+                phraseLetters += "- "
             }
         }
         GuessingWord.text = phraseLetters
@@ -66,6 +62,43 @@ class GameViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    @IBAction func WrongGuess() {
+        //make sure guess is valid
+        
+        var currGuess = GuessingTextField.text!.uppercaseString
+        var newCharIndex = Word.characters.indexOf(Character(currGuess))
+        
+        if newCharIndex == nil {
+            wrongGuesses += 1
+            if wrongGuesses >= 7 {
+                GameOver()
+                return
+            }
+            HangmanIcon.image = UIImage(named: hangmanIcons[wrongGuesses])
+            IncorrectLetters.text! += (String(currGuess) + ", ")
+        }
+        
+        //iterate through the word and insert the guessed letter if possible.
+        var currChar = Word[Word.startIndex]
+        var currPhraseLetter = phraseLetters[phraseLetters.startIndex]
+        var modifiedWord = ""
+        for x in 0...Word.characters.count-1 {
+            currChar = Word[Word.startIndex.advancedBy(x)]
+            currPhraseLetter = phraseLetters[phraseLetters.startIndex.advancedBy(x)]
+            if currChar == Character(currGuess) {
+                modifiedWord += currGuess
+            } else {
+                modifiedWord += String(currPhraseLetter)
+            }
+        }
+        phraseLetters = modifiedWord
+        GuessingWord.text = modifiedWord
+        GuessingTextField.text = ""
+        
+    }
+    
     
     //override func loadView() {
     //    IncorrectGuess.addTarget(self, action: "wrongGuess", forControlEvents: .TouchUpInside)

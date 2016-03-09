@@ -90,13 +90,6 @@
                                 <rect key="frame" x="180" y="476" width="99" height="30"/>
                                 <state key="normal" title="Correct Guess"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIg-9z-kZg">
-                                <rect key="frame" x="318" y="476" width="109" height="30"/>
-                                <state key="normal" title="Incorrect Guess"/>
-                                <connections>
-                                    <action selector="WrongGuess" destination="XFL-L4-7Wp" eventType="touchUpInside" id="Z0o-rh-Nqy"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DmB-Qy-DxO">
                                 <rect key="frame" x="159" y="69" width="283" height="227"/>
                                 <constraints>
@@ -104,7 +97,7 @@
                                     <constraint firstAttribute="height" constant="227" id="ikR-5P-jD1"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incorrect Guesses:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmu-5g-WME">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incorrect Guesses: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmu-5g-WME">
                                 <rect key="frame" x="143" y="354" width="315" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="315" id="6In-wM-K3t"/>
@@ -123,16 +116,23 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIg-9z-kZg">
+                                <rect key="frame" x="395" y="304" width="109" height="30"/>
+                                <state key="normal" title="Incorrect Guess"/>
+                                <connections>
+                                    <action selector="WrongGuess" destination="XFL-L4-7Wp" eventType="touchUpInside" id="Z0o-rh-Nqy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eIg-9z-kZg" firstAttribute="top" secondItem="DmB-Qy-DxO" secondAttribute="bottom" constant="180" id="6Fy-Nr-BcY"/>
+                            <constraint firstItem="eIg-9z-kZg" firstAttribute="top" secondItem="DmB-Qy-DxO" secondAttribute="bottom" constant="8" id="6Fy-Nr-BcY"/>
                             <constraint firstItem="nAa-kI-luO" firstAttribute="centerX" secondItem="DmB-Qy-DxO" secondAttribute="centerX" constant="-5.5" id="7cl-hw-Bu8"/>
                             <constraint firstItem="1Ti-9N-mfY" firstAttribute="top" secondItem="wmu-5g-WME" secondAttribute="bottom" constant="32" id="AbO-dE-QXH"/>
                             <constraint firstItem="wmu-5g-WME" firstAttribute="top" secondItem="nAa-kI-luO" secondAttribute="bottom" constant="293" id="BKm-Az-ZhB"/>
                             <constraint firstItem="7Ey-cg-66H" firstAttribute="top" secondItem="DmB-Qy-DxO" secondAttribute="bottom" constant="180" id="BWu-zW-VFi"/>
                             <constraint firstItem="nAa-kI-luO" firstAttribute="leading" secondItem="8vI-MQ-u44" secondAttribute="trailing" constant="-117" id="CIo-w1-B8E"/>
-                            <constraint firstItem="eIg-9z-kZg" firstAttribute="leading" secondItem="7Ey-cg-66H" secondAttribute="trailing" constant="39" id="Mhe-xK-Lu9"/>
+                            <constraint firstItem="eIg-9z-kZg" firstAttribute="leading" secondItem="7Ey-cg-66H" secondAttribute="trailing" constant="116" id="Mhe-xK-Lu9"/>
                             <constraint firstItem="nAa-kI-luO" firstAttribute="top" secondItem="DmB-Qy-DxO" secondAttribute="bottom" constant="-256" id="NZ7-2m-Y2W"/>
                             <constraint firstItem="1Ti-9N-mfY" firstAttribute="leading" secondItem="8vI-MQ-u44" secondAttribute="trailing" constant="33" id="Qqp-Of-Ktj"/>
                             <constraint firstItem="wmu-5g-WME" firstAttribute="centerX" secondItem="NQX-fH-8b7" secondAttribute="centerX" constant="0.5" id="SLX-xc-ESJ"/>
