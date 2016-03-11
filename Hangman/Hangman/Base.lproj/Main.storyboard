@@ -66,7 +66,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ti-9N-mfY">
-                                <rect key="frame" x="330" y="431" width="97" height="30"/>
+                                <rect key="frame" x="199" y="425" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Jtg-wH-OS7"/>
                                     <constraint firstAttribute="width" constant="97" id="R6y-k7-iIP"/>
@@ -75,76 +75,56 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess a letter " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vI-MQ-u44">
-                                <rect key="frame" x="162" y="435" width="135" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="135" id="Q5g-b9-ame"/>
-                                    <constraint firstAttribute="height" constant="21" id="WmP-ZH-tmZ"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="n9c-LD-bcr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ey-cg-66H">
-                                <rect key="frame" x="180" y="476" width="99" height="30"/>
-                                <state key="normal" title="Correct Guess"/>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DmB-Qy-DxO">
-                                <rect key="frame" x="159" y="69" width="283" height="227"/>
+                                <rect key="frame" x="159" y="97" width="283" height="227"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="283" id="Wze-y2-0Wa"/>
                                     <constraint firstAttribute="height" constant="227" id="ikR-5P-jD1"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incorrect Guesses: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmu-5g-WME">
-                                <rect key="frame" x="143" y="354" width="315" height="45"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incorrect Guesses: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmu-5g-WME">
+                                <rect key="frame" x="28" y="339" width="534" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="315" id="6In-wM-K3t"/>
+                                    <constraint firstAttribute="width" constant="534" id="6In-wM-K3t"/>
                                     <constraint firstAttribute="height" constant="45" id="uSQ-Pg-lTs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Letters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAa-kI-luO">
-                                <rect key="frame" x="180" y="40" width="230" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIg-9z-kZg">
+                                <rect key="frame" x="322" y="425" width="48" height="30"/>
+                                <state key="normal" title="Guess!"/>
+                                <connections>
+                                    <action selector="WrongGuess" destination="XFL-L4-7Wp" eventType="touchUpInside" id="Z0o-rh-Nqy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Letters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAa-kI-luO">
+                                <rect key="frame" x="20" y="53" width="560" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="230" id="dsO-xg-6p4"/>
+                                    <constraint firstAttribute="width" constant="560" id="dsO-xg-6p4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIg-9z-kZg">
-                                <rect key="frame" x="395" y="304" width="109" height="30"/>
-                                <state key="normal" title="Incorrect Guess"/>
-                                <connections>
-                                    <action selector="WrongGuess" destination="XFL-L4-7Wp" eventType="touchUpInside" id="Z0o-rh-Nqy"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eIg-9z-kZg" firstAttribute="top" secondItem="DmB-Qy-DxO" secondAttribute="bottom" constant="8" id="6Fy-Nr-BcY"/>
-                            <constraint firstItem="nAa-kI-luO" firstAttribute="centerX" secondItem="DmB-Qy-DxO" secondAttribute="centerX" constant="-5.5" id="7cl-hw-Bu8"/>
-                            <constraint firstItem="1Ti-9N-mfY" firstAttribute="top" secondItem="wmu-5g-WME" secondAttribute="bottom" constant="32" id="AbO-dE-QXH"/>
-                            <constraint firstItem="wmu-5g-WME" firstAttribute="top" secondItem="nAa-kI-luO" secondAttribute="bottom" constant="293" id="BKm-Az-ZhB"/>
-                            <constraint firstItem="7Ey-cg-66H" firstAttribute="top" secondItem="DmB-Qy-DxO" secondAttribute="bottom" constant="180" id="BWu-zW-VFi"/>
-                            <constraint firstItem="nAa-kI-luO" firstAttribute="leading" secondItem="8vI-MQ-u44" secondAttribute="trailing" constant="-117" id="CIo-w1-B8E"/>
-                            <constraint firstItem="eIg-9z-kZg" firstAttribute="leading" secondItem="7Ey-cg-66H" secondAttribute="trailing" constant="116" id="Mhe-xK-Lu9"/>
-                            <constraint firstItem="nAa-kI-luO" firstAttribute="top" secondItem="DmB-Qy-DxO" secondAttribute="bottom" constant="-256" id="NZ7-2m-Y2W"/>
-                            <constraint firstItem="1Ti-9N-mfY" firstAttribute="leading" secondItem="8vI-MQ-u44" secondAttribute="trailing" constant="33" id="Qqp-Of-Ktj"/>
-                            <constraint firstItem="wmu-5g-WME" firstAttribute="centerX" secondItem="NQX-fH-8b7" secondAttribute="centerX" constant="0.5" id="SLX-xc-ESJ"/>
-                            <constraint firstItem="DmB-Qy-DxO" firstAttribute="top" secondItem="MGz-cV-MKt" secondAttribute="bottom" constant="49" id="a8x-Sg-8z0"/>
+                            <constraint firstItem="eIg-9z-kZg" firstAttribute="top" secondItem="DmB-Qy-DxO" secondAttribute="bottom" constant="101" id="6Fy-Nr-BcY"/>
+                            <constraint firstItem="nAa-kI-luO" firstAttribute="centerX" secondItem="DmB-Qy-DxO" secondAttribute="centerX" constant="-0.5" id="7cl-hw-Bu8"/>
+                            <constraint firstItem="1Ti-9N-mfY" firstAttribute="top" secondItem="wmu-5g-WME" secondAttribute="bottom" constant="41" id="AbO-dE-QXH"/>
+                            <constraint firstItem="wmu-5g-WME" firstAttribute="top" secondItem="nAa-kI-luO" secondAttribute="bottom" constant="265" id="BKm-Az-ZhB"/>
+                            <constraint firstItem="nAa-kI-luO" firstAttribute="top" secondItem="DmB-Qy-DxO" secondAttribute="bottom" constant="-271" id="NZ7-2m-Y2W"/>
+                            <constraint firstItem="wmu-5g-WME" firstAttribute="centerX" secondItem="NQX-fH-8b7" secondAttribute="centerX" constant="-4.5" id="SLX-xc-ESJ"/>
+                            <constraint firstItem="DmB-Qy-DxO" firstAttribute="top" secondItem="MGz-cV-MKt" secondAttribute="bottom" constant="77" id="a8x-Sg-8z0"/>
+                            <constraint firstItem="eIg-9z-kZg" firstAttribute="leading" secondItem="1Ti-9N-mfY" secondAttribute="trailing" constant="26" id="fX7-0E-ihe"/>
                             <constraint firstItem="DmB-Qy-DxO" firstAttribute="centerX" secondItem="NQX-fH-8b7" secondAttribute="centerX" id="ghf-eM-6N0"/>
-                            <constraint firstItem="1Ti-9N-mfY" firstAttribute="top" secondItem="DmB-Qy-DxO" secondAttribute="bottom" constant="135" id="kqG-wq-gM0"/>
-                            <constraint firstItem="nAa-kI-luO" firstAttribute="leading" secondItem="7Ey-cg-66H" secondAttribute="trailing" constant="-99" id="leJ-9n-Fcb"/>
-                            <constraint firstItem="8vI-MQ-u44" firstAttribute="top" secondItem="DmB-Qy-DxO" secondAttribute="bottom" constant="139" id="zc3-ct-e7T"/>
+                            <constraint firstItem="1Ti-9N-mfY" firstAttribute="top" secondItem="DmB-Qy-DxO" secondAttribute="bottom" constant="101" id="kqG-wq-gM0"/>
+                            <constraint firstItem="eIg-9z-kZg" firstAttribute="leading" secondItem="DmB-Qy-DxO" secondAttribute="trailing" constant="-120" id="y6s-7e-Wx5"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="CorrectGuess" destination="7Ey-cg-66H" id="6Sl-0s-Rf5"/>
                         <outlet property="GuessingTextField" destination="1Ti-9N-mfY" id="9rA-gL-yz0"/>
                         <outlet property="GuessingWord" destination="nAa-kI-luO" id="i0v-0e-0nc"/>
                         <outlet property="HangmanIcon" destination="DmB-Qy-DxO" id="PjG-Nk-MbC"/>

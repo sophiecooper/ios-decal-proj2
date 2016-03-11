@@ -13,8 +13,6 @@ class GameViewController: UIViewController {
     let hangmanIcons = ["hangman1.gif", "hangman2.gif", "hangman3.gif", "hangman4.gif", "hangman5.gif", "hangman6.gif", "hangman7.gif"]
     var wrongGuesses = 0
     
-    @IBOutlet var CorrectGuess: UIButton!
-    
     @IBOutlet var IncorrectGuess: UIButton!
     
     @IBOutlet var HangmanIcon: UIImageView!
@@ -33,8 +31,9 @@ class GameViewController: UIViewController {
 
     func GameOver() {
         print("game over")
-//        let AlertController = UIAlertController(title: "Game Over", message: "Sorry, you are out of lives. Game over.", preferredStyle: .Alert)
-//        AlertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: ))
+        let alert = UIAlertController(title: "Game Over", message: "Try again!", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
@@ -42,7 +41,7 @@ class GameViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         let hangmanPhrases = HangmanPhrases()
-        var phrase = hangmanPhrases.getRandomPhrase()
+        let phrase = hangmanPhrases.getRandomPhrase()
         Word = phrase
         print(phrase)
         HangmanIcon.image = UIImage(named: hangmanIcons[wrongGuesses])
@@ -50,7 +49,7 @@ class GameViewController: UIViewController {
             if character == " " {
                 phraseLetters += String(character)
             } else {
-                phraseLetters += "- "
+                phraseLetters += "-"
             }
         }
         GuessingWord.text = phraseLetters
@@ -67,8 +66,19 @@ class GameViewController: UIViewController {
     @IBAction func WrongGuess() {
         //make sure guess is valid
         
-        var currGuess = GuessingTextField.text!.uppercaseString
-        var newCharIndex = Word.characters.indexOf(Character(currGuess))
+        //if (value >= 65 && value <= 90) || (value >= 97 && value <= 122)
+        
+        let currGuess = GuessingTextField.text!.uppercaseString
+        if (currGuess.characters.count != 1) {
+            //invalid guess, make alert
+            let alert = UIAlertController(title: "Invalid Guess", message: "Please input one letter", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            print("invalid guess")
+            return
+        }
+        
+        let newCharIndex = Word.characters.indexOf(Character(currGuess))
         
         if newCharIndex == nil {
             wrongGuesses += 1
