@@ -149,7 +149,7 @@ class GameViewController: UIViewController {
     @IBAction func NewGame() {
         //reset variables
         IncorrectGuessedLetters = [String]()
-        IncorrectLetters.text = "Incorrect Guesses"
+        IncorrectLetters.text = "Incorrect Guesses: "
         phraseLetters = ""
         gameFinished = false
         wrongGuesses = 0
