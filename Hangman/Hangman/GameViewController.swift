@@ -28,7 +28,10 @@ class GameViewController: UIViewController {
     var Word : String = ""
     
     var phraseLetters : String = ""
+    
+    var gameFinished = false
 
+    @IBOutlet weak var NewGameButton: UIBarButtonItem!
 
 
     func GameOver() {
@@ -67,7 +70,7 @@ class GameViewController: UIViewController {
     
     @IBAction func WrongGuess() {
         
-        if wrongGuesses >= 6 {
+        if wrongGuesses >= 6 || gameFinished {
             //make sure game is not over
             GuessingTextField.text = ""
             return
@@ -130,6 +133,41 @@ class GameViewController: UIViewController {
         GuessingWord.text = modifiedWord
         GuessingTextField.text = ""
         
+        //check if the user won
+        if (GuessingWord.text == Word) {
+            gameFinished = true
+            let alert = UIAlertController(title: "Congrats!", message: "You won! Click new game to play again.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            alert.addAction(UIAlertAction(title: "New Game", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in self.NewGame() }))
+            self.presentViewController(alert, animated: true, completion: nil)
+            //ask if they want to play again
+        }
+        
+    }
+    
+    
+    @IBAction func NewGame() {
+        //reset variables
+        IncorrectGuessedLetters = [String]()
+        IncorrectLetters.text = "Incorrect Guesses"
+        phraseLetters = ""
+        gameFinished = false
+        wrongGuesses = 0
+        
+        //pick new word
+        let hangmanPhrases = HangmanPhrases()
+        let phrase = hangmanPhrases.getRandomPhrase()
+        Word = phrase
+        print(phrase)
+        HangmanIcon.image = UIImage(named: hangmanIcons[wrongGuesses])
+        for character in phrase.characters {
+            if character == " " {
+                phraseLetters += String(character)
+            } else {
+                phraseLetters += "-"
+            }
+        }
+        GuessingWord.text = phraseLetters
     }
 
     /*

@@ -75,18 +75,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DmB-Qy-DxO">
-                                <rect key="frame" x="159" y="97" width="283" height="227"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="283" id="Wze-y2-0Wa"/>
-                                    <constraint firstAttribute="height" constant="227" id="ikR-5P-jD1"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incorrect Guesses: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmu-5g-WME">
-                                <rect key="frame" x="28" y="339" width="534" height="45"/>
+                                <rect key="frame" x="28" y="363" width="534" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="534" id="6In-wM-K3t"/>
                                     <constraint firstAttribute="height" constant="45" id="uSQ-Pg-lTs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Letters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAa-kI-luO">
+                                <rect key="frame" x="20" y="85" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="560" id="dsO-xg-6p4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -99,41 +101,53 @@
                                     <action selector="WrongGuess" destination="XFL-L4-7Wp" eventType="touchUpInside" id="Z0o-rh-Nqy"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Letters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAa-kI-luO">
-                                <rect key="frame" x="20" y="53" width="560" height="21"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zrJ-J3-G5e">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="New Game" id="gHR-YD-zqK">
+                                        <connections>
+                                            <action selector="NewGame" destination="XFL-L4-7Wp" id="zqu-2a-rQP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DmB-Qy-DxO">
+                                <rect key="frame" x="159" y="128" width="283" height="227"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="560" id="dsO-xg-6p4"/>
+                                    <constraint firstAttribute="width" constant="283" id="Wze-y2-0Wa"/>
+                                    <constraint firstAttribute="height" constant="227" id="ikR-5P-jD1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eIg-9z-kZg" firstAttribute="top" secondItem="DmB-Qy-DxO" secondAttribute="bottom" constant="101" id="6Fy-Nr-BcY"/>
+                            <constraint firstItem="eIg-9z-kZg" firstAttribute="top" secondItem="DmB-Qy-DxO" secondAttribute="bottom" constant="70" id="6Fy-Nr-BcY"/>
                             <constraint firstItem="nAa-kI-luO" firstAttribute="centerX" secondItem="DmB-Qy-DxO" secondAttribute="centerX" constant="-0.5" id="7cl-hw-Bu8"/>
-                            <constraint firstItem="1Ti-9N-mfY" firstAttribute="top" secondItem="wmu-5g-WME" secondAttribute="bottom" constant="41" id="AbO-dE-QXH"/>
-                            <constraint firstItem="wmu-5g-WME" firstAttribute="top" secondItem="nAa-kI-luO" secondAttribute="bottom" constant="265" id="BKm-Az-ZhB"/>
-                            <constraint firstItem="nAa-kI-luO" firstAttribute="top" secondItem="DmB-Qy-DxO" secondAttribute="bottom" constant="-271" id="NZ7-2m-Y2W"/>
+                            <constraint firstItem="1Ti-9N-mfY" firstAttribute="top" secondItem="wmu-5g-WME" secondAttribute="bottom" constant="17" id="AbO-dE-QXH"/>
+                            <constraint firstItem="wmu-5g-WME" firstAttribute="top" secondItem="nAa-kI-luO" secondAttribute="bottom" constant="257" id="BKm-Az-ZhB"/>
+                            <constraint firstItem="nAa-kI-luO" firstAttribute="top" secondItem="DmB-Qy-DxO" secondAttribute="bottom" constant="-270" id="NZ7-2m-Y2W"/>
                             <constraint firstItem="wmu-5g-WME" firstAttribute="centerX" secondItem="NQX-fH-8b7" secondAttribute="centerX" constant="-4.5" id="SLX-xc-ESJ"/>
-                            <constraint firstItem="DmB-Qy-DxO" firstAttribute="top" secondItem="MGz-cV-MKt" secondAttribute="bottom" constant="77" id="a8x-Sg-8z0"/>
+                            <constraint firstItem="DmB-Qy-DxO" firstAttribute="top" secondItem="MGz-cV-MKt" secondAttribute="bottom" constant="128" id="a8x-Sg-8z0"/>
                             <constraint firstItem="eIg-9z-kZg" firstAttribute="leading" secondItem="1Ti-9N-mfY" secondAttribute="trailing" constant="26" id="fX7-0E-ihe"/>
                             <constraint firstItem="DmB-Qy-DxO" firstAttribute="centerX" secondItem="NQX-fH-8b7" secondAttribute="centerX" id="ghf-eM-6N0"/>
-                            <constraint firstItem="1Ti-9N-mfY" firstAttribute="top" secondItem="DmB-Qy-DxO" secondAttribute="bottom" constant="101" id="kqG-wq-gM0"/>
+                            <constraint firstItem="1Ti-9N-mfY" firstAttribute="top" secondItem="DmB-Qy-DxO" secondAttribute="bottom" constant="70" id="kqG-wq-gM0"/>
                             <constraint firstItem="eIg-9z-kZg" firstAttribute="leading" secondItem="DmB-Qy-DxO" secondAttribute="trailing" constant="-120" id="y6s-7e-Wx5"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="GuessingTextField" destination="1Ti-9N-mfY" id="9rA-gL-yz0"/>
                         <outlet property="GuessingWord" destination="nAa-kI-luO" id="i0v-0e-0nc"/>
                         <outlet property="HangmanIcon" destination="DmB-Qy-DxO" id="PjG-Nk-MbC"/>
                         <outlet property="IncorrectGuess" destination="eIg-9z-kZg" id="YiR-uN-CWM"/>
                         <outlet property="IncorrectLetters" destination="wmu-5g-WME" id="Vb3-RV-ePK"/>
+                        <outlet property="NewGameButton" destination="gHR-YD-zqK" id="4Yb-kA-s13"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="217" y="306"/>
+            <point key="canvasLocation" x="279" y="305"/>
         </scene>
     </scenes>
 </document>
