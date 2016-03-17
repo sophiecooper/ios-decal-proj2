@@ -38,6 +38,7 @@ class GameViewController: UIViewController {
         print("game over")
         let alert = UIAlertController(title: "Game Over", message: "Try again!", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "New Game", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in self.NewGame() }))
         self.presentViewController(alert, animated: true, completion: nil)
     }
 
